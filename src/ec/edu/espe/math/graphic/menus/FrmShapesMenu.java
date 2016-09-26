@@ -5,6 +5,11 @@
  */
 package ec.edu.espe.math.graphic.menus;
 
+import ec.edu.espe.math.geometry.shapes.circumference.*;
+import ec.edu.espe.math.geometry.shapes.quadrilaterals.*;
+import ec.edu.espe.math.geometry.shapes.triangles.*;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Jonathan
@@ -16,7 +21,8 @@ public class FrmShapesMenu extends javax.swing.JFrame {
      */
     public FrmShapesMenu() {
         initComponents();
-        this.jLayeredPane1.setVisible(false);
+        this.jpnMaster.setVisible(true);
+        initializePanels();
     }
 
     /**
@@ -29,20 +35,87 @@ public class FrmShapesMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        btn1 = new javax.swing.JButton();
+        btnEllipse = new javax.swing.JButton();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jpnMaster = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jpn1 = new javax.swing.JPanel();
+        jpnCircle = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jpn2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        btnCalculateCircle = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        txtRadiusCircle = new javax.swing.JTextField();
+        jpnSquare = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        btnCalculateSquare = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        txtSideSquare = new javax.swing.JTextField();
+        jpnEllipse = new javax.swing.JPanel();
+        btnCalculateEllipse = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtRadiusEllipse1 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txtRadiusEllipse2 = new javax.swing.JTextField();
+        jpnRectangle = new javax.swing.JPanel();
+        btnCalculateRectangle = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        txtSideRectangle1 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        txtSideRectangle2 = new javax.swing.JTextField();
+        jpnParallelogram = new javax.swing.JPanel();
+        btnCalculateParallelogram = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        txtBaseParallelogram = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        txtSideParallelogram = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        txtHeighParallelogram = new javax.swing.JTextField();
+        jpnRhombus = new javax.swing.JPanel();
+        btnCalculateRhombus = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        txtSideRhombus1 = new javax.swing.JTextField();
+        txtSideRhombus2 = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        jpnTrapezoid = new javax.swing.JPanel();
+        btnCalculateTrapezoid = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        txtBaseTrapezoid = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        txtSideTrapezoid = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        txtHeighTrapezoid = new javax.swing.JTextField();
+        jpnTriangle = new javax.swing.JPanel();
+        btnCalculateTriangle = new javax.swing.JButton();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        txtBaseTriangle = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        txtHeighTriangle = new javax.swing.JTextField();
+        jpnTriangleRectangle = new javax.swing.JPanel();
+        btnCalculateTriangleRectangle = new javax.swing.JButton();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        txtBaseTriangleRectangle = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
+        txtHeighTriangleRectangle = new javax.swing.JTextField();
+        btnCircle = new javax.swing.JButton();
+        btnParallelogram = new javax.swing.JButton();
+        btnSquare = new javax.swing.JButton();
+        btnRectangle = new javax.swing.JButton();
+        btnTrapezoid = new javax.swing.JButton();
+        btnRhombus = new javax.swing.JButton();
+        btnTriangle = new javax.swing.JButton();
+        btnTriangleRectangle = new javax.swing.JButton();
+        txtAreaShapes = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtPerimeterShapes = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(612, 368));
+        setMinimumSize(new java.awt.Dimension(645, 440));
         getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 28)); // NOI18N
@@ -51,67 +124,717 @@ public class FrmShapesMenu extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(170, 10, 280, 40);
 
-        btn1.addActionListener(new java.awt.event.ActionListener() {
+        btnEllipse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/math/graphic/pictures/Elipse.png"))); // NOI18N
+        btnEllipse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1ActionPerformed(evt);
+                btnEllipseActionPerformed(evt);
             }
         });
-        getContentPane().add(btn1);
-        btn1.setBounds(30, 80, 80, 70);
+        getContentPane().add(btnEllipse);
+        btnEllipse.setBounds(130, 80, 80, 90);
 
         jpnMaster.setLayout(null);
+        jLayeredPane1.add(jpnMaster);
+        jpnMaster.setBounds(10, 0, 250, 160);
+
+        jpnCircle.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpnCircle.setLayout(null);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setText("Círculo");
+        jpnCircle.add(jLabel1);
+        jLabel1.setBounds(30, 20, 50, 15);
+
+        btnCalculateCircle.setText("Calcular");
+        btnCalculateCircle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalculateCircleActionPerformed(evt);
+            }
+        });
+        jpnCircle.add(btnCalculateCircle);
+        btnCalculateCircle.setBounds(141, 90, 90, 30);
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setText("Radio:");
+        jpnCircle.add(jLabel6);
+        jLabel6.setBounds(30, 60, 40, 15);
+        jpnCircle.add(txtRadiusCircle);
+        txtRadiusCircle.setBounds(79, 60, 70, 20);
+
+        jLayeredPane1.add(jpnCircle);
+        jpnCircle.setBounds(10, 0, 250, 140);
+
+        jpnSquare.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpnSquare.setLayout(null);
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setText("Cuadrado");
+        jpnSquare.add(jLabel9);
+        jLabel9.setBounds(30, 20, 80, 15);
+
+        btnCalculateSquare.setText("Calcular");
+        btnCalculateSquare.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalculateSquareActionPerformed(evt);
+            }
+        });
+        jpnSquare.add(btnCalculateSquare);
+        btnCalculateSquare.setBounds(141, 90, 90, 30);
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel10.setText("Lado:");
+        jpnSquare.add(jLabel10);
+        jLabel10.setBounds(30, 60, 40, 15);
+        jpnSquare.add(txtSideSquare);
+        txtSideSquare.setBounds(79, 60, 70, 20);
+
+        jLayeredPane1.add(jpnSquare);
+        jpnSquare.setBounds(10, 0, 250, 140);
+
+        jpnEllipse.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpnEllipse.setLayout(null);
+
+        btnCalculateEllipse.setText("Calcular");
+        btnCalculateEllipse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalculateEllipseActionPerformed(evt);
+            }
+        });
+        jpnEllipse.add(btnCalculateEllipse);
+        btnCalculateEllipse.setBounds(140, 110, 90, 30);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setText("Elipse");
+        jpnEllipse.add(jLabel3);
+        jLabel3.setBounds(20, 20, 50, 15);
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel7.setText("Radio 1:");
+        jpnEllipse.add(jLabel7);
+        jLabel7.setBounds(20, 50, 50, 15);
+        jpnEllipse.add(txtRadiusEllipse1);
+        txtRadiusEllipse1.setBounds(80, 50, 70, 20);
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel8.setText("Radio 2:");
+        jpnEllipse.add(jLabel8);
+        jLabel8.setBounds(20, 80, 50, 15);
+        jpnEllipse.add(txtRadiusEllipse2);
+        txtRadiusEllipse2.setBounds(80, 80, 70, 20);
+
+        jLayeredPane1.add(jpnEllipse);
+        jpnEllipse.setBounds(10, 0, 250, 150);
+
+        jpnRectangle.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpnRectangle.setLayout(null);
+
+        btnCalculateRectangle.setText("Calcular");
+        btnCalculateRectangle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalculateRectangleActionPerformed(evt);
+            }
+        });
+        jpnRectangle.add(btnCalculateRectangle);
+        btnCalculateRectangle.setBounds(140, 110, 90, 30);
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setText("Rectángulo");
+        jpnRectangle.add(jLabel11);
+        jLabel11.setBounds(20, 15, 90, 20);
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel12.setText("Lado 1:");
+        jpnRectangle.add(jLabel12);
+        jLabel12.setBounds(20, 50, 50, 15);
+        jpnRectangle.add(txtSideRectangle1);
+        txtSideRectangle1.setBounds(80, 50, 70, 20);
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel13.setText("Lado 2:");
+        jpnRectangle.add(jLabel13);
+        jLabel13.setBounds(20, 80, 50, 15);
+        jpnRectangle.add(txtSideRectangle2);
+        txtSideRectangle2.setBounds(80, 80, 70, 20);
+
+        jLayeredPane1.add(jpnRectangle);
+        jpnRectangle.setBounds(10, 0, 250, 150);
+
+        jpnParallelogram.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpnParallelogram.setLayout(null);
+
+        btnCalculateParallelogram.setText("Calcular");
+        btnCalculateParallelogram.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalculateParallelogramActionPerformed(evt);
+            }
+        });
+        jpnParallelogram.add(btnCalculateParallelogram);
+        btnCalculateParallelogram.setBounds(150, 120, 90, 30);
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel14.setText("Paralelogramo");
+        jpnParallelogram.add(jLabel14);
+        jLabel14.setBounds(20, 10, 100, 20);
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel15.setText("Base :");
+        jpnParallelogram.add(jLabel15);
+        jLabel15.setBounds(20, 40, 50, 15);
+        jpnParallelogram.add(txtBaseParallelogram);
+        txtBaseParallelogram.setBounds(80, 40, 70, 20);
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel16.setText("Lado :");
+        jpnParallelogram.add(jLabel16);
+        jLabel16.setBounds(20, 100, 50, 15);
+        jpnParallelogram.add(txtSideParallelogram);
+        txtSideParallelogram.setBounds(80, 100, 70, 20);
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel17.setText("Altura :");
+        jpnParallelogram.add(jLabel17);
+        jLabel17.setBounds(20, 70, 50, 15);
+        jpnParallelogram.add(txtHeighParallelogram);
+        txtHeighParallelogram.setBounds(80, 70, 70, 20);
+
+        jLayeredPane1.add(jpnParallelogram);
+        jpnParallelogram.setBounds(10, 0, 250, 150);
+
+        jpnRhombus.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpnRhombus.setLayout(null);
+
+        btnCalculateRhombus.setText("Calcular");
+        btnCalculateRhombus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalculateRhombusActionPerformed(evt);
+            }
+        });
+        jpnRhombus.add(btnCalculateRhombus);
+        btnCalculateRhombus.setBounds(140, 110, 90, 30);
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel18.setText("Rombo");
+        jpnRhombus.add(jLabel18);
+        jLabel18.setBounds(20, 20, 50, 15);
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel19.setText("Diagonal menor:");
+        jpnRhombus.add(jLabel19);
+        jLabel19.setBounds(20, 80, 90, 15);
+        jpnRhombus.add(txtSideRhombus1);
+        txtSideRhombus1.setBounds(120, 50, 70, 20);
+        jpnRhombus.add(txtSideRhombus2);
+        txtSideRhombus2.setBounds(120, 80, 70, 20);
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel21.setText("Diagonal mayor:");
+        jpnRhombus.add(jLabel21);
+        jLabel21.setBounds(20, 50, 90, 15);
+
+        jLayeredPane1.add(jpnRhombus);
+        jpnRhombus.setBounds(10, 0, 250, 150);
+
+        jpnTrapezoid.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpnTrapezoid.setLayout(null);
+
+        btnCalculateTrapezoid.setText("Calcular");
+        btnCalculateTrapezoid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalculateTrapezoidActionPerformed(evt);
+            }
+        });
+        jpnTrapezoid.add(btnCalculateTrapezoid);
+        btnCalculateTrapezoid.setBounds(150, 120, 90, 30);
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel20.setText("Trapezoide");
+        jpnTrapezoid.add(jLabel20);
+        jLabel20.setBounds(20, 10, 100, 20);
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel22.setText("Base :");
+        jpnTrapezoid.add(jLabel22);
+        jLabel22.setBounds(20, 40, 50, 15);
+        jpnTrapezoid.add(txtBaseTrapezoid);
+        txtBaseTrapezoid.setBounds(80, 40, 70, 20);
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel23.setText("Lado :");
+        jpnTrapezoid.add(jLabel23);
+        jLabel23.setBounds(20, 100, 50, 15);
+        jpnTrapezoid.add(txtSideTrapezoid);
+        txtSideTrapezoid.setBounds(80, 100, 70, 20);
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel24.setText("Altura :");
+        jpnTrapezoid.add(jLabel24);
+        jLabel24.setBounds(20, 70, 50, 15);
+        jpnTrapezoid.add(txtHeighTrapezoid);
+        txtHeighTrapezoid.setBounds(80, 70, 70, 20);
+
+        jLayeredPane1.add(jpnTrapezoid);
+        jpnTrapezoid.setBounds(10, 0, 250, 150);
+
+        jpnTriangle.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpnTriangle.setLayout(null);
+
+        btnCalculateTriangle.setText("Calcular");
+        btnCalculateTriangle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalculateTriangleActionPerformed(evt);
+            }
+        });
+        jpnTriangle.add(btnCalculateTriangle);
+        btnCalculateTriangle.setBounds(140, 110, 90, 30);
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel25.setText("Triángulo");
+        jpnTriangle.add(jLabel25);
+        jLabel25.setBounds(20, 15, 90, 20);
+
+        jLabel26.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel26.setText("Base:");
+        jpnTriangle.add(jLabel26);
+        jLabel26.setBounds(20, 50, 50, 15);
+        jpnTriangle.add(txtBaseTriangle);
+        txtBaseTriangle.setBounds(80, 50, 70, 20);
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel27.setText("Altura:");
+        jpnTriangle.add(jLabel27);
+        jLabel27.setBounds(20, 80, 50, 15);
+        jpnTriangle.add(txtHeighTriangle);
+        txtHeighTriangle.setBounds(80, 80, 70, 20);
+
+        jLayeredPane1.add(jpnTriangle);
+        jpnTriangle.setBounds(10, 0, 250, 150);
+
+        jpnTriangleRectangle.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpnTriangleRectangle.setLayout(null);
+
+        btnCalculateTriangleRectangle.setText("Calcular");
+        btnCalculateTriangleRectangle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalculateTriangleRectangleActionPerformed(evt);
+            }
+        });
+        jpnTriangleRectangle.add(btnCalculateTriangleRectangle);
+        btnCalculateTriangleRectangle.setBounds(140, 110, 90, 30);
+
+        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel28.setText("Triángulo Rectángulo");
+        jpnTriangleRectangle.add(jLabel28);
+        jLabel28.setBounds(20, 15, 160, 20);
+
+        jLabel29.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel29.setText("Base:");
+        jpnTriangleRectangle.add(jLabel29);
+        jLabel29.setBounds(20, 50, 50, 15);
+        jpnTriangleRectangle.add(txtBaseTriangleRectangle);
+        txtBaseTriangleRectangle.setBounds(80, 50, 70, 20);
+
+        jLabel30.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel30.setText("Altura:");
+        jpnTriangleRectangle.add(jLabel30);
+        jLabel30.setBounds(20, 80, 50, 15);
+        jpnTriangleRectangle.add(txtHeighTriangleRectangle);
+        txtHeighTriangleRectangle.setBounds(80, 80, 70, 20);
+
+        jLayeredPane1.add(jpnTriangleRectangle);
+        jpnTriangleRectangle.setBounds(10, 0, 250, 150);
+
+        getContentPane().add(jLayeredPane1);
+        jLayeredPane1.setBounds(340, 90, 270, 160);
+
+        btnCircle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/math/graphic/pictures/Círculo.png"))); // NOI18N
+        btnCircle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCircleActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCircle);
+        btnCircle.setBounds(30, 80, 80, 90);
+
+        btnParallelogram.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/math/graphic/pictures/paralelogramo.png"))); // NOI18N
+        btnParallelogram.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnParallelogramActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnParallelogram);
+        btnParallelogram.setBounds(230, 80, 80, 90);
+
+        btnSquare.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/math/graphic/pictures/cuadrado.png"))); // NOI18N
+        btnSquare.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSquareActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSquare);
+        btnSquare.setBounds(30, 190, 80, 90);
+
+        btnRectangle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/math/graphic/pictures/rectangulo.png"))); // NOI18N
+        btnRectangle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRectangleActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRectangle);
+        btnRectangle.setBounds(130, 190, 80, 90);
+
+        btnTrapezoid.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/math/graphic/pictures/trapecio.png"))); // NOI18N
+        btnTrapezoid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTrapezoidActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnTrapezoid);
+        btnTrapezoid.setBounds(30, 300, 80, 90);
+
+        btnRhombus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/math/graphic/pictures/rombo.png"))); // NOI18N
+        btnRhombus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRhombusActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRhombus);
+        btnRhombus.setBounds(230, 190, 80, 90);
+
+        btnTriangle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/math/graphic/pictures/triangulo.png"))); // NOI18N
+        btnTriangle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTriangleActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnTriangle);
+        btnTriangle.setBounds(130, 300, 80, 90);
+
+        btnTriangleRectangle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/math/graphic/pictures/trianguloRectangulo.png"))); // NOI18N
+        btnTriangleRectangle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTriangleRectangleActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnTriangleRectangle);
+        btnTriangleRectangle.setBounds(230, 300, 80, 90);
+        getContentPane().add(txtAreaShapes);
+        txtAreaShapes.setBounds(430, 260, 70, 20);
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel4.setText("Perimetro:");
-        jpnMaster.add(jLabel4);
-        jLabel4.setBounds(30, 170, 70, 21);
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(370, 300, 70, 21);
+        getContentPane().add(txtPerimeterShapes);
+        txtPerimeterShapes.setBounds(450, 300, 80, 20);
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel5.setText("Area: ");
-        jpnMaster.add(jLabel5);
-        jLabel5.setBounds(30, 140, 50, 21);
-
-        jLayeredPane1.add(jpnMaster);
-        jpnMaster.setBounds(0, 0, 260, 210);
-
-        jpn1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jpn1.setLayout(null);
-
-        jLabel1.setText("Area:");
-        jpn1.add(jLabel1);
-        jLabel1.setBounds(30, 40, 27, 14);
-
-        jButton1.setText("jButton1");
-        jpn1.add(jButton1);
-        jButton1.setBounds(50, 110, 73, 23);
-
-        jLayeredPane1.add(jpn1);
-        jpn1.setBounds(10, 0, 250, 190);
-
-        jpn2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jpn2.setLayout(null);
-
-        jButton2.setText("jButton2");
-        jpn2.add(jButton2);
-        jButton2.setBounds(160, 110, 73, 23);
-
-        jLabel3.setText("Perimetro");
-        jpn2.add(jLabel3);
-        jLabel3.setBounds(100, 40, 46, 14);
-
-        jLayeredPane1.add(jpn2);
-        jpn2.setBounds(10, 0, 250, 190);
-
-        getContentPane().add(jLayeredPane1);
-        jLayeredPane1.setBounds(310, 90, 290, 220);
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(370, 260, 50, 21);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    private void initializePanels(){
+        this.jpnCircle.setVisible(false);
+        this.jpnEllipse.setVisible(false);
+        this.jpnParallelogram.setVisible(false);
+        this.jpnRectangle.setVisible(false);
+        this.jpnRhombus.setVisible(false);
+        this.jpnSquare.setVisible(false);
+        this.jpnTrapezoid.setVisible(false);
+    }
+    
+    private void btnEllipseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEllipseActionPerformed
+        initializePanels();
+        jpnMaster.setVisible(false);
+        jpnEllipse.setVisible(true);
+        txtRadiusEllipse1.setText("");
+        txtRadiusEllipse2.setText("");
+    }//GEN-LAST:event_btnEllipseActionPerformed
 
-    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
-        this.jpn2.setVisible(true);
-        this.jpn1.setVisible(false);
-    }//GEN-LAST:event_btn1ActionPerformed
+    private void btnCircleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCircleActionPerformed
+        initializePanels();
+        jpnMaster.setVisible(false);
+        jpnCircle.setVisible(true);
+        txtRadiusCircle.setText("");
+    }//GEN-LAST:event_btnCircleActionPerformed
+
+    private void btnParallelogramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnParallelogramActionPerformed
+        initializePanels();
+        jpnMaster.setVisible(false);
+        jpnParallelogram.setVisible(true);
+        txtBaseParallelogram.setText("");
+        txtHeighParallelogram.setText("");
+        txtSideParallelogram.setText("");
+    }//GEN-LAST:event_btnParallelogramActionPerformed
+
+    private void btnSquareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSquareActionPerformed
+        initializePanels();
+        jpnMaster.setVisible(false);
+        jpnSquare.setVisible(true);
+        txtSideSquare.setText("");
+    }//GEN-LAST:event_btnSquareActionPerformed
+
+    private void btnRectangleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRectangleActionPerformed
+        initializePanels();
+        jpnMaster.setVisible(false);
+        jpnRectangle.setVisible(true);
+        txtSideRectangle1.setText("");
+        txtSideRectangle2.setText("");
+    }//GEN-LAST:event_btnRectangleActionPerformed
+
+    private void btnTrapezoidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrapezoidActionPerformed
+        initializePanels();
+        jpnMaster.setVisible(false);
+        jpnTrapezoid.setVisible(true);
+        txtBaseTrapezoid.setText("");
+        txtHeighTrapezoid.setText("");
+        txtSideTrapezoid.setText("");
+    }//GEN-LAST:event_btnTrapezoidActionPerformed
+
+    private void btnRhombusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRhombusActionPerformed
+        initializePanels();
+        jpnMaster.setVisible(false);
+        jpnRhombus.setVisible(true);
+        txtSideRhombus1.setText("");
+        txtSideRhombus2.setText("");
+    }//GEN-LAST:event_btnRhombusActionPerformed
+
+    private void btnTriangleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTriangleActionPerformed
+        initializePanels();
+        jpnMaster.setVisible(false);
+        jpnTriangle.setVisible(true);
+        txtBaseTriangle.setText("");
+        txtHeighTriangle.setText("");
+
+    }//GEN-LAST:event_btnTriangleActionPerformed
+
+    private void btnTriangleRectangleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTriangleRectangleActionPerformed
+        initializePanels();
+        jpnMaster.setVisible(false);
+        jpnTriangleRectangle.setVisible(true);
+        txtBaseTriangleRectangle.setText("");
+        txtHeighTriangleRectangle.setText("");
+    }//GEN-LAST:event_btnTriangleRectangleActionPerformed
+
+    private void btnCalculateCircleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateCircleActionPerformed
+        txtAreaShapes.setText("");
+        txtPerimeterShapes.setText("");
+        if(!txtRadiusCircle.getText().equals("")){
+            try{
+                float radius= Float.parseFloat(txtRadiusCircle.getText());
+                Circle c = new Circle(radius);
+                txtAreaShapes.setText(c.CalculateArea().toString());
+                txtPerimeterShapes.setText(c.CalculatePerimeter().toString());
+            }
+            catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(rootPane, "No es un número");
+                txtRadiusCircle.setText("");
+            }
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Campos incompletos");
+            txtRadiusCircle.setText("");
+        }
+    }//GEN-LAST:event_btnCalculateCircleActionPerformed
+
+    private void btnCalculateEllipseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateEllipseActionPerformed
+        txtAreaShapes.setText("");
+        txtPerimeterShapes.setText("");
+        if(!((this.txtRadiusEllipse1.getText().equals(""))||(this.txtRadiusEllipse2.getText().equals("")))){
+            try{
+                float radius1= Float.parseFloat(this.txtRadiusEllipse1.getText());
+                float radius2= Float.parseFloat(this.txtRadiusEllipse2.getText());
+                Ellipse e = new Ellipse(radius1, radius2);
+                txtAreaShapes.setText(e.CalculateArea().toString());
+                txtPerimeterShapes.setText(e.CalculatePerimeter().toString());
+            }
+            catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(rootPane, "No es un número");
+                txtRadiusEllipse1.setText("");
+                txtRadiusEllipse2.setText("");
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Campos incompletos");
+            txtRadiusEllipse1.setText("");
+            txtRadiusEllipse2.setText("");
+        }
+    }//GEN-LAST:event_btnCalculateEllipseActionPerformed
+
+    private void btnCalculateSquareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateSquareActionPerformed
+        txtAreaShapes.setText("");
+        txtPerimeterShapes.setText("");
+        if(!this.txtSideSquare.getText().equals("")){
+            try{
+                float side= Float.parseFloat(txtSideSquare.getText());
+                Square sq = new Square (side);
+                txtAreaShapes.setText(sq.CalculateArea().toString());
+                txtPerimeterShapes.setText(sq.CalculatePerimeter().toString());
+            }
+            catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(rootPane, "No es un número");
+                txtSideSquare.setText("");
+            }
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Campos incompletos");
+            txtSideSquare.setText("");
+        }
+    }//GEN-LAST:event_btnCalculateSquareActionPerformed
+
+    private void btnCalculateRectangleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateRectangleActionPerformed
+        txtAreaShapes.setText("");
+        txtPerimeterShapes.setText("");
+        if(!((this.txtSideRectangle1.getText().equals(""))||(this.txtSideRectangle2.getText().equals("")))){
+            try{
+                float side1= Float.parseFloat(this.txtSideRectangle1.getText());
+                float side2= Float.parseFloat(this.txtSideRectangle2.getText());
+                Rectangle r = new Rectangle (side1, side2);
+                txtAreaShapes.setText(r.CalculateArea().toString());
+                txtPerimeterShapes.setText(r.CalculatePerimeter().toString());
+            }
+            catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(rootPane, "No es un número");
+                txtSideRectangle1.setText("");
+                txtSideRectangle2.setText("");
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Campos incompletos");
+            txtSideRectangle1.setText("");
+            txtSideRectangle2.setText("");
+        }
+    }//GEN-LAST:event_btnCalculateRectangleActionPerformed
+
+    private void btnCalculateParallelogramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateParallelogramActionPerformed
+        txtAreaShapes.setText("");
+        txtPerimeterShapes.setText("");
+        if(!((this.txtBaseParallelogram.getText().equals(""))||(this.txtHeighParallelogram.getText().equals(""))||(this.txtSideParallelogram.getText().equals("")))){
+            try{
+                float base= Float.parseFloat(this.txtBaseParallelogram.getText());
+                float heigh= Float.parseFloat(this.txtHeighParallelogram.getText());
+                float side= Float.parseFloat(this.txtSideParallelogram.getText());
+                Parallelogram p = new Parallelogram(heigh, side, base);
+                txtAreaShapes.setText(p.CalculateArea().toString());
+                txtPerimeterShapes.setText(p.CalculatePerimeter().toString());
+            }
+            catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(rootPane, "No es un número");
+                txtBaseParallelogram.setText("");
+                txtHeighParallelogram.setText("");
+                txtSideParallelogram.setText("");
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Campos incompletos");
+            txtBaseParallelogram.setText("");
+            txtHeighParallelogram.setText("");
+            txtSideParallelogram.setText("");
+        }
+    }//GEN-LAST:event_btnCalculateParallelogramActionPerformed
+
+    private void btnCalculateRhombusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateRhombusActionPerformed
+        txtAreaShapes.setText("");
+        txtPerimeterShapes.setText("");
+        if(!((this.txtSideRectangle1.getText().equals(""))||(this.txtSideRectangle2.getText().equals("")))){
+            try{
+                float side1= Float.parseFloat(this.txtSideRectangle1.getText());
+                float side2= Float.parseFloat(this.txtSideRectangle2.getText());
+                Rectangle r = new Rectangle (side1, side2);
+                txtAreaShapes.setText(r.CalculateArea().toString());
+                txtPerimeterShapes.setText(r.CalculatePerimeter().toString());
+            }
+            catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(rootPane, "No es un número");
+                txtSideRhombus1.setText("");
+                txtSideRhombus2.setText("");
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Campos incompletos");
+            txtSideRhombus1.setText("");
+            txtSideRhombus2.setText("");
+        }
+    }//GEN-LAST:event_btnCalculateRhombusActionPerformed
+
+    private void btnCalculateTrapezoidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateTrapezoidActionPerformed
+        txtAreaShapes.setText("");
+        txtPerimeterShapes.setText("");
+        if(!((this.txtBaseTrapezoid.getText().equals(""))||(this.txtHeighTrapezoid.getText().equals(""))||(this.txtSideTrapezoid.getText().equals("")))){
+            try{
+                float base= Float.parseFloat(this.txtBaseTrapezoid.getText());
+                float heigh= Float.parseFloat(this.txtHeighTrapezoid.getText());
+                float side= Float.parseFloat(this.txtSideTrapezoid.getText());
+                Trapezoid t = new Trapezoid(side,heigh,base);
+                txtAreaShapes.setText(t.CalculateArea().toString());
+                txtPerimeterShapes.setText(t.CalculatePerimeter().toString());
+            }
+            catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(rootPane, "No es un número");
+                txtBaseTrapezoid.setText("");
+                txtHeighTrapezoid.setText("");
+                txtSideTrapezoid.setText("");
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Campos incompletos");
+            txtBaseTrapezoid.setText("");
+            txtHeighTrapezoid.setText("");
+            txtSideTrapezoid.setText("");
+        }
+    }//GEN-LAST:event_btnCalculateTrapezoidActionPerformed
+
+    private void btnCalculateTriangleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateTriangleActionPerformed
+        txtAreaShapes.setText("");
+        txtPerimeterShapes.setText("");
+        if(!((this.txtBaseTriangle.getText().equals(""))||(this.txtHeighTriangle.getText().equals("")))){
+            try{
+                float base= Float.parseFloat(this.txtBaseTriangle.getText());
+                float heigh= Float.parseFloat(this.txtHeighTriangle.getText());
+                EquilateralTriangle eq = new EquilateralTriangle (base, heigh);
+                txtAreaShapes.setText(eq.CalculateArea().toString());
+                txtPerimeterShapes.setText(eq.CalculatePerimeter().toString());
+            }
+            catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(rootPane, "No es un número");
+                txtBaseTriangle.setText("");
+                txtHeighTriangle.setText("");
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Campos incompletos");
+            txtBaseTriangle.setText("");
+            txtHeighTriangle.setText("");
+        }
+    }//GEN-LAST:event_btnCalculateTriangleActionPerformed
+
+    private void btnCalculateTriangleRectangleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateTriangleRectangleActionPerformed
+        txtAreaShapes.setText("");
+        txtPerimeterShapes.setText("");
+        if(!((this.txtBaseTriangleRectangle.getText().equals(""))||(this.txtHeighTriangleRectangle.getText().equals("")))){
+            try{
+                float base= Float.parseFloat(this.txtBaseTriangleRectangle.getText());
+                float heigh= Float.parseFloat(this.txtHeighTriangleRectangle.getText());
+                RightAngleTriangle rt = new RightAngleTriangle(base, heigh);
+                txtAreaShapes.setText(rt.CalculateArea().toString());
+                txtPerimeterShapes.setText(rt.CalculatePerimeter().toString());
+            }
+            catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(rootPane, "No es un número");
+                txtBaseTriangleRectangle.setText("");
+                txtHeighTriangleRectangle.setText("");
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Campos incompletos");
+            txtBaseTriangleRectangle.setText("");
+            txtHeighTriangleRectangle.setText("");
+        }
+    }//GEN-LAST:event_btnCalculateTriangleRectangleActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,17 +873,84 @@ public class FrmShapesMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnCalculateCircle;
+    private javax.swing.JButton btnCalculateEllipse;
+    private javax.swing.JButton btnCalculateParallelogram;
+    private javax.swing.JButton btnCalculateRectangle;
+    private javax.swing.JButton btnCalculateRhombus;
+    private javax.swing.JButton btnCalculateSquare;
+    private javax.swing.JButton btnCalculateTrapezoid;
+    private javax.swing.JButton btnCalculateTriangle;
+    private javax.swing.JButton btnCalculateTriangleRectangle;
+    private javax.swing.JButton btnCircle;
+    private javax.swing.JButton btnEllipse;
+    private javax.swing.JButton btnParallelogram;
+    private javax.swing.JButton btnRectangle;
+    private javax.swing.JButton btnRhombus;
+    private javax.swing.JButton btnSquare;
+    private javax.swing.JButton btnTrapezoid;
+    private javax.swing.JButton btnTriangle;
+    private javax.swing.JButton btnTriangleRectangle;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
-    private javax.swing.JPanel jpn1;
-    private javax.swing.JPanel jpn2;
+    private javax.swing.JPanel jpnCircle;
+    private javax.swing.JPanel jpnEllipse;
     private javax.swing.JPanel jpnMaster;
+    private javax.swing.JPanel jpnParallelogram;
+    private javax.swing.JPanel jpnRectangle;
+    private javax.swing.JPanel jpnRhombus;
+    private javax.swing.JPanel jpnSquare;
+    private javax.swing.JPanel jpnTrapezoid;
+    private javax.swing.JPanel jpnTriangle;
+    private javax.swing.JPanel jpnTriangleRectangle;
+    private javax.swing.JTextField txtAreaShapes;
+    private javax.swing.JTextField txtBaseParallelogram;
+    private javax.swing.JTextField txtBaseTrapezoid;
+    private javax.swing.JTextField txtBaseTriangle;
+    private javax.swing.JTextField txtBaseTriangleRectangle;
+    private javax.swing.JTextField txtHeighParallelogram;
+    private javax.swing.JTextField txtHeighTrapezoid;
+    private javax.swing.JTextField txtHeighTriangle;
+    private javax.swing.JTextField txtHeighTriangleRectangle;
+    private javax.swing.JTextField txtPerimeterShapes;
+    private javax.swing.JTextField txtRadiusCircle;
+    private javax.swing.JTextField txtRadiusEllipse1;
+    private javax.swing.JTextField txtRadiusEllipse2;
+    private javax.swing.JTextField txtSideParallelogram;
+    private javax.swing.JTextField txtSideRectangle1;
+    private javax.swing.JTextField txtSideRectangle2;
+    private javax.swing.JTextField txtSideRhombus1;
+    private javax.swing.JTextField txtSideRhombus2;
+    private javax.swing.JTextField txtSideSquare;
+    private javax.swing.JTextField txtSideTrapezoid;
     // End of variables declaration//GEN-END:variables
 }

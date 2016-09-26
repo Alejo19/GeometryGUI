@@ -5,6 +5,13 @@
  */
 package ec.edu.espe.math.graphic.menus;
 
+import ec.edu.espe.math.geometry.shapes.circumference.*;
+import ec.edu.espe.math.geometry.shapes.quadrilaterals.*;
+import ec.edu.espe.math.geometry.shapes.triangles.*;
+import ec.edu.espe.math.geometry.solids.cirfumference.Sphere;
+import ec.edu.espe.math.geometry.solids.cones.Cone;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Jonathan
@@ -12,10 +19,12 @@ package ec.edu.espe.math.graphic.menus;
 public class FrmSolidsMenu extends javax.swing.JFrame {
 
     /**
-     * Creates new form FrmSolidsMenu
+     * Creates new form FrmShapesMenu
      */
     public FrmSolidsMenu() {
         initComponents();
+        this.jpnMaster.setVisible(true);
+        initializePanelsSolids();
     }
 
     /**
@@ -28,32 +37,474 @@ public class FrmSolidsMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
+        btnCone = new javax.swing.JButton();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        jpnMaster = new javax.swing.JPanel();
+        jpnSquare = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        btnCalculateSquare = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        txtSideSquare = new javax.swing.JTextField();
+        jpnSphere = new javax.swing.JPanel();
+        btnCalculateSphere = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtRadiusSphere = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txtHeighSphere = new javax.swing.JTextField();
+        jpnRectangle = new javax.swing.JPanel();
+        btnCalculateRectangle = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        txtSideRectangle1 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        txtSideRectangle2 = new javax.swing.JTextField();
+        jpnCone = new javax.swing.JPanel();
+        btnCalculateCone = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        txtRadiusCone = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        txtSideCone = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        txtHeighCone = new javax.swing.JTextField();
+        jpnRhombus = new javax.swing.JPanel();
+        btnCalculateRhombus = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        txtSideRhombus1 = new javax.swing.JTextField();
+        txtSideRhombus2 = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        btnSphere = new javax.swing.JButton();
+        btnParallelogram = new javax.swing.JButton();
+        btnSquare = new javax.swing.JButton();
+        btnRhombus = new javax.swing.JButton();
+        txtAreaSolids = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtVolumenSolids = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(645, 440));
+        getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 28)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 102, 0));
-        jLabel2.setText("GEOMETRY SOFTWARE");
+        jLabel2.setForeground(new java.awt.Color(0, 102, 153));
+        jLabel2.setText("Sólidos");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(270, 10, 110, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel2)
-                .addContainerGap(229, Short.MAX_VALUE))
-        );
+        btnCone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/math/graphic/pictures/cono.png"))); // NOI18N
+        btnCone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCone);
+        btnCone.setBounds(180, 80, 80, 90);
+
+        jpnMaster.setLayout(null);
+        jLayeredPane1.add(jpnMaster);
+        jpnMaster.setBounds(10, 0, 250, 160);
+
+        jpnSquare.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpnSquare.setLayout(null);
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setText("Cuadrado");
+        jpnSquare.add(jLabel9);
+        jLabel9.setBounds(30, 20, 80, 15);
+
+        btnCalculateSquare.setText("Calcular");
+        btnCalculateSquare.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalculateSquareActionPerformed(evt);
+            }
+        });
+        jpnSquare.add(btnCalculateSquare);
+        btnCalculateSquare.setBounds(141, 90, 90, 30);
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel10.setText("Lado:");
+        jpnSquare.add(jLabel10);
+        jLabel10.setBounds(30, 60, 40, 15);
+        jpnSquare.add(txtSideSquare);
+        txtSideSquare.setBounds(79, 60, 70, 20);
+
+        jLayeredPane1.add(jpnSquare);
+        jpnSquare.setBounds(10, 0, 250, 140);
+
+        jpnSphere.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpnSphere.setLayout(null);
+
+        btnCalculateSphere.setText("Calcular");
+        btnCalculateSphere.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalculateSphereActionPerformed(evt);
+            }
+        });
+        jpnSphere.add(btnCalculateSphere);
+        btnCalculateSphere.setBounds(140, 110, 90, 30);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setText("Esfera");
+        jpnSphere.add(jLabel3);
+        jLabel3.setBounds(20, 20, 50, 15);
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel7.setText("Radio :");
+        jpnSphere.add(jLabel7);
+        jLabel7.setBounds(20, 50, 50, 15);
+        jpnSphere.add(txtRadiusSphere);
+        txtRadiusSphere.setBounds(80, 50, 70, 20);
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel8.setText("Altura :");
+        jpnSphere.add(jLabel8);
+        jLabel8.setBounds(20, 80, 50, 15);
+        jpnSphere.add(txtHeighSphere);
+        txtHeighSphere.setBounds(80, 80, 70, 20);
+
+        jLayeredPane1.add(jpnSphere);
+        jpnSphere.setBounds(10, 0, 250, 150);
+
+        jpnRectangle.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpnRectangle.setLayout(null);
+
+        btnCalculateRectangle.setText("Calcular");
+        btnCalculateRectangle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalculateRectangleActionPerformed(evt);
+            }
+        });
+        jpnRectangle.add(btnCalculateRectangle);
+        btnCalculateRectangle.setBounds(140, 110, 90, 30);
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setText("Rectángulo");
+        jpnRectangle.add(jLabel11);
+        jLabel11.setBounds(20, 15, 90, 20);
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel12.setText("Lado 1:");
+        jpnRectangle.add(jLabel12);
+        jLabel12.setBounds(20, 50, 50, 15);
+        jpnRectangle.add(txtSideRectangle1);
+        txtSideRectangle1.setBounds(80, 50, 70, 20);
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel13.setText("Lado 2:");
+        jpnRectangle.add(jLabel13);
+        jLabel13.setBounds(20, 80, 50, 15);
+        jpnRectangle.add(txtSideRectangle2);
+        txtSideRectangle2.setBounds(80, 80, 70, 20);
+
+        jLayeredPane1.add(jpnRectangle);
+        jpnRectangle.setBounds(10, 0, 250, 150);
+
+        jpnCone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpnCone.setLayout(null);
+
+        btnCalculateCone.setText("Calcular");
+        btnCalculateCone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalculateConeActionPerformed(evt);
+            }
+        });
+        jpnCone.add(btnCalculateCone);
+        btnCalculateCone.setBounds(150, 120, 90, 30);
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel14.setText("Cono");
+        jpnCone.add(jLabel14);
+        jLabel14.setBounds(20, 10, 100, 20);
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel15.setText("Radio :");
+        jpnCone.add(jLabel15);
+        jLabel15.setBounds(20, 40, 50, 15);
+        jpnCone.add(txtRadiusCone);
+        txtRadiusCone.setBounds(80, 40, 70, 20);
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel16.setText("Lado :");
+        jpnCone.add(jLabel16);
+        jLabel16.setBounds(20, 100, 50, 15);
+        jpnCone.add(txtSideCone);
+        txtSideCone.setBounds(80, 100, 70, 20);
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel17.setText("Altura :");
+        jpnCone.add(jLabel17);
+        jLabel17.setBounds(20, 70, 50, 15);
+        jpnCone.add(txtHeighCone);
+        txtHeighCone.setBounds(80, 70, 70, 20);
+
+        jLayeredPane1.add(jpnCone);
+        jpnCone.setBounds(10, 0, 250, 150);
+
+        jpnRhombus.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpnRhombus.setLayout(null);
+
+        btnCalculateRhombus.setText("Calcular");
+        btnCalculateRhombus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalculateRhombusActionPerformed(evt);
+            }
+        });
+        jpnRhombus.add(btnCalculateRhombus);
+        btnCalculateRhombus.setBounds(140, 110, 90, 30);
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel18.setText("Rombo");
+        jpnRhombus.add(jLabel18);
+        jLabel18.setBounds(20, 20, 50, 15);
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel19.setText("Diagonal menor:");
+        jpnRhombus.add(jLabel19);
+        jLabel19.setBounds(20, 80, 90, 15);
+        jpnRhombus.add(txtSideRhombus1);
+        txtSideRhombus1.setBounds(120, 50, 70, 20);
+        jpnRhombus.add(txtSideRhombus2);
+        txtSideRhombus2.setBounds(120, 80, 70, 20);
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel21.setText("Diagonal mayor:");
+        jpnRhombus.add(jLabel21);
+        jLabel21.setBounds(20, 50, 90, 15);
+
+        jLayeredPane1.add(jpnRhombus);
+        jpnRhombus.setBounds(10, 0, 250, 150);
+
+        getContentPane().add(jLayeredPane1);
+        jLayeredPane1.setBounds(310, 90, 260, 160);
+
+        btnSphere.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/math/graphic/pictures/esfera.png"))); // NOI18N
+        btnSphere.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSphereActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSphere);
+        btnSphere.setBounds(50, 80, 80, 90);
+
+        btnParallelogram.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/math/graphic/pictures/paralelogramo.png"))); // NOI18N
+        btnParallelogram.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnParallelogramActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnParallelogram);
+        btnParallelogram.setBounds(180, 190, 80, 90);
+
+        btnSquare.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/math/graphic/pictures/cuadrado.png"))); // NOI18N
+        btnSquare.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSquareActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSquare);
+        btnSquare.setBounds(50, 190, 80, 90);
+
+        btnRhombus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/math/graphic/pictures/rombo.png"))); // NOI18N
+        btnRhombus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRhombusActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRhombus);
+        btnRhombus.setBounds(50, 300, 80, 90);
+        getContentPane().add(txtAreaSolids);
+        txtAreaSolids.setBounds(390, 260, 70, 20);
+
+        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel4.setText("Volumen:");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(330, 300, 57, 21);
+        getContentPane().add(txtVolumenSolids);
+        txtVolumenSolids.setBounds(410, 300, 80, 20);
+
+        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jLabel5.setText("Area: ");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(330, 260, 50, 21);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    private void initializePanelsSolids(){
+        this.jpnSphere.setVisible(false);
+        this.jpnSphere.setVisible(false);
+        this.jpnCone.setVisible(false);
+        this.jpnRectangle.setVisible(false);
+        this.jpnRhombus.setVisible(false);
+
+    }
+    
+    private void btnConeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConeActionPerformed
+        initializePanelsSolids();
+        jpnMaster.setVisible(false);
+        jpnCone.setVisible(true);
+        txtRadiusCone.setText("");
+        txtHeighCone.setText("");
+        txtSideCone.setText("");
+        
+    }//GEN-LAST:event_btnConeActionPerformed
+
+    private void btnSphereActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSphereActionPerformed
+        initializePanelsSolids();
+        jpnMaster.setVisible(false);
+        jpnSphere.setVisible(true);
+        txtRadiusSphere.setText("");
+        txtHeighSphere.setText("");
+
+    }//GEN-LAST:event_btnSphereActionPerformed
+
+    private void btnParallelogramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnParallelogramActionPerformed
+        initializePanelsSolids();
+        jpnMaster.setVisible(false);
+        jpnCone.setVisible(true);
+        txtRadiusCone.setText("");
+        txtHeighCone.setText("");
+        txtSideCone.setText("");
+    }//GEN-LAST:event_btnParallelogramActionPerformed
+
+    private void btnSquareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSquareActionPerformed
+        initializePanelsSolids();
+        jpnMaster.setVisible(false);
+        jpnSquare.setVisible(true);
+        txtSideSquare.setText("");
+    }//GEN-LAST:event_btnSquareActionPerformed
+
+    private void btnRhombusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRhombusActionPerformed
+        initializePanelsSolids();
+        jpnMaster.setVisible(false);
+        jpnRhombus.setVisible(true);
+        txtSideRhombus1.setText("");
+        txtSideRhombus2.setText("");
+    }//GEN-LAST:event_btnRhombusActionPerformed
+
+    private void btnCalculateSphereActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateSphereActionPerformed
+        txtAreaSolids.setText("");
+        txtVolumenSolids.setText("");
+        if(!((this.txtRadiusSphere.getText().equals(""))||(this.txtHeighSphere.getText().equals("")))){
+            try{
+                float radius= Float.parseFloat(this.txtRadiusSphere.getText());
+                float heigh= Float.parseFloat(this.txtHeighSphere.getText());
+                Sphere s = new Sphere(heigh, radius);
+                txtAreaSolids.setText(s.CalculateArea().toString());
+                txtVolumenSolids.setText(s.CalculateVolume().toString());
+            }
+            catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(rootPane, "No es un número");
+                txtRadiusSphere.setText("");
+                txtHeighSphere.setText("");
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Campos incompletos");
+            txtRadiusSphere.setText("");
+            txtHeighSphere.setText("");
+        }
+    }//GEN-LAST:event_btnCalculateSphereActionPerformed
+
+    private void btnCalculateSquareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateSquareActionPerformed
+        txtAreaSolids.setText("");
+        txtVolumenSolids.setText("");
+        if(!this.txtSideSquare.getText().equals("")){
+            try{
+                float side= Float.parseFloat(txtSideSquare.getText());
+                Square sq = new Square (side);
+                txtAreaSolids.setText(sq.CalculateArea().toString());
+                txtVolumenSolids.setText(sq.CalculatePerimeter().toString());
+            }
+            catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(rootPane, "No es un número");
+                txtSideSquare.setText("");
+            }
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Campos incompletos");
+            txtSideSquare.setText("");
+        }
+    }//GEN-LAST:event_btnCalculateSquareActionPerformed
+
+    private void btnCalculateRectangleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateRectangleActionPerformed
+        txtAreaSolids.setText("");
+        txtVolumenSolids.setText("");
+        if(!((this.txtSideRectangle1.getText().equals(""))||(this.txtSideRectangle2.getText().equals("")))){
+            try{
+                float side1= Float.parseFloat(this.txtSideRectangle1.getText());
+                float side2= Float.parseFloat(this.txtSideRectangle2.getText());
+                Rectangle r = new Rectangle (side1, side2);
+                txtAreaSolids.setText(r.CalculateArea().toString());
+                txtVolumenSolids.setText(r.CalculatePerimeter().toString());
+            }
+            catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(rootPane, "No es un número");
+                txtSideRectangle1.setText("");
+                txtSideRectangle2.setText("");
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Campos incompletos");
+            txtSideRectangle1.setText("");
+            txtSideRectangle2.setText("");
+        }
+    }//GEN-LAST:event_btnCalculateRectangleActionPerformed
+
+    private void btnCalculateConeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateConeActionPerformed
+        txtAreaSolids.setText("");
+        txtVolumenSolids.setText("");
+        if(!((this.txtRadiusCone.getText().equals(""))||(this.txtHeighCone.getText().equals(""))||(this.txtSideCone.getText().equals("")))){
+            try{
+                float radius= Float.parseFloat(this.txtRadiusCone.getText());
+                float heigh= Float.parseFloat(this.txtHeighCone.getText());
+                float side= Float.parseFloat(this.txtSideCone.getText());
+                Cone c = new Cone(side, heigh, radius);
+                txtAreaSolids.setText(c.CalculateArea().toString());
+                txtVolumenSolids.setText(c.CalculateVolume().toString());
+            }
+            catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(rootPane, "No es un número");
+                txtRadiusCone.setText("");
+                txtHeighCone.setText("");
+                txtSideCone.setText("");
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Campos incompletos");
+            txtRadiusCone.setText("");
+            txtHeighCone.setText("");
+            txtSideCone.setText("");
+        }
+    }//GEN-LAST:event_btnCalculateConeActionPerformed
+
+    private void btnCalculateRhombusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateRhombusActionPerformed
+        txtAreaSolids.setText("");
+        txtVolumenSolids.setText("");
+        if(!((this.txtSideRectangle1.getText().equals(""))||(this.txtSideRectangle2.getText().equals("")))){
+            try{
+                float side1= Float.parseFloat(this.txtSideRectangle1.getText());
+                float side2= Float.parseFloat(this.txtSideRectangle2.getText());
+                Rectangle r = new Rectangle (side1, side2);
+                txtAreaSolids.setText(r.CalculateArea().toString());
+                txtVolumenSolids.setText(r.CalculatePerimeter().toString());
+            }
+            catch(NumberFormatException e){
+                JOptionPane.showMessageDialog(rootPane, "No es un número");
+                txtSideRhombus1.setText("");
+                txtSideRhombus2.setText("");
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Campos incompletos");
+            txtSideRhombus1.setText("");
+            txtSideRhombus2.setText("");
+        }
+    }//GEN-LAST:event_btnCalculateRhombusActionPerformed
 
     /**
      * @param args the command line arguments
@@ -81,6 +532,7 @@ public class FrmSolidsMenu extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FrmSolidsMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -88,9 +540,56 @@ public class FrmSolidsMenu extends javax.swing.JFrame {
                 new FrmSolidsMenu().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCalculateCone;
+    private javax.swing.JButton btnCalculateRectangle;
+    private javax.swing.JButton btnCalculateRhombus;
+    private javax.swing.JButton btnCalculateSphere;
+    private javax.swing.JButton btnCalculateSquare;
+    private javax.swing.JButton btnCone;
+    private javax.swing.JButton btnParallelogram;
+    private javax.swing.JButton btnRhombus;
+    private javax.swing.JButton btnSphere;
+    private javax.swing.JButton btnSquare;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JPanel jpnCone;
+    private javax.swing.JPanel jpnMaster;
+    private javax.swing.JPanel jpnRectangle;
+    private javax.swing.JPanel jpnRhombus;
+    private javax.swing.JPanel jpnSphere;
+    private javax.swing.JPanel jpnSquare;
+    private javax.swing.JTextField txtAreaSolids;
+    private javax.swing.JTextField txtHeighCone;
+    private javax.swing.JTextField txtHeighSphere;
+    private javax.swing.JTextField txtRadiusCone;
+    private javax.swing.JTextField txtRadiusSphere;
+    private javax.swing.JTextField txtSideCone;
+    private javax.swing.JTextField txtSideRectangle1;
+    private javax.swing.JTextField txtSideRectangle2;
+    private javax.swing.JTextField txtSideRhombus1;
+    private javax.swing.JTextField txtSideRhombus2;
+    private javax.swing.JTextField txtSideSquare;
+    private javax.swing.JTextField txtVolumenSolids;
     // End of variables declaration//GEN-END:variables
 }
