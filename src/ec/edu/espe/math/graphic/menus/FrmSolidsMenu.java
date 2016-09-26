@@ -346,8 +346,9 @@ public class FrmSolidsMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     private void initializePanelsSolids(){
+        
         this.jpnSphere.setVisible(false);
-        this.jpnSphere.setVisible(false);
+        this.jpnCube.setVisible(false);
         this.jpnCone.setVisible(false);
         this.jpnCylinder.setVisible(false);
         this.jpnFrustum.setVisible(false);

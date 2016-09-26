@@ -34,7 +34,7 @@ public class FrmMainMenu extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(565, 375));
+        setMinimumSize(new java.awt.Dimension(565, 390));
         getContentPane().setLayout(null);
 
         btnSolids.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/math/graphic/pictures/solidsShapes.png"))); // NOI18N
@@ -75,8 +75,8 @@ public class FrmMainMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSolidsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolidsActionPerformed
-//        FrmSolidsMenu solidsMenu = new FrmSolidsMenu();
-//        solidsMenu.setVisible(true);
+       FrmSolidsMenu solidsMenu = new FrmSolidsMenu();
+       solidsMenu.setVisible(true);
     }//GEN-LAST:event_btnSolidsActionPerformed
 
     private void btnShapesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShapesActionPerformed
