@@ -10,6 +10,9 @@ import ec.edu.espe.math.geometry.shapes.quadrilaterals.*;
 import ec.edu.espe.math.geometry.shapes.triangles.*;
 import ec.edu.espe.math.geometry.solids.cirfumference.Sphere;
 import ec.edu.espe.math.geometry.solids.cones.Cone;
+import ec.edu.espe.math.geometry.solids.cubes.Cube;
+import ec.edu.espe.math.geometry.solids.cylinders.Cylinder;
+import ec.edu.espe.math.geometry.solids.frustums.Frustum;
 import javax.swing.JOptionPane;
 
 /**
@@ -40,11 +43,11 @@ public class FrmSolidsMenu extends javax.swing.JFrame {
         btnCone = new javax.swing.JButton();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jpnMaster = new javax.swing.JPanel();
-        jpnSquare = new javax.swing.JPanel();
+        jpnCube = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        btnCalculateSquare = new javax.swing.JButton();
+        btnCalculateCube = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-        txtSideSquare = new javax.swing.JTextField();
+        txtSideCube = new javax.swing.JTextField();
         jpnSphere = new javax.swing.JPanel();
         btnCalculateSphere = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
@@ -52,13 +55,13 @@ public class FrmSolidsMenu extends javax.swing.JFrame {
         txtRadiusSphere = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         txtHeighSphere = new javax.swing.JTextField();
-        jpnRectangle = new javax.swing.JPanel();
-        btnCalculateRectangle = new javax.swing.JButton();
+        jpnCylinder = new javax.swing.JPanel();
+        btnCalculateCylinder = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        txtSideRectangle1 = new javax.swing.JTextField();
+        txtHeighCylinder = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        txtSideRectangle2 = new javax.swing.JTextField();
+        txtRadiusCylinder = new javax.swing.JTextField();
         jpnCone = new javax.swing.JPanel();
         btnCalculateCone = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
@@ -68,17 +71,19 @@ public class FrmSolidsMenu extends javax.swing.JFrame {
         txtSideCone = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         txtHeighCone = new javax.swing.JTextField();
-        jpnRhombus = new javax.swing.JPanel();
-        btnCalculateRhombus = new javax.swing.JButton();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        txtSideRhombus1 = new javax.swing.JTextField();
-        txtSideRhombus2 = new javax.swing.JTextField();
-        jLabel21 = new javax.swing.JLabel();
+        jpnFrustum = new javax.swing.JPanel();
+        btnCalculateFrustum = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        txtRadius1Frustum = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        txtHeighFrustum = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        txtRadius2Frustum = new javax.swing.JTextField();
         btnSphere = new javax.swing.JButton();
-        btnParallelogram = new javax.swing.JButton();
-        btnSquare = new javax.swing.JButton();
-        btnRhombus = new javax.swing.JButton();
+        btnCylinder = new javax.swing.JButton();
+        btnCube = new javax.swing.JButton();
+        btnFrustum = new javax.swing.JButton();
         txtAreaSolids = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtVolumenSolids = new javax.swing.JTextField();
@@ -107,32 +112,32 @@ public class FrmSolidsMenu extends javax.swing.JFrame {
         jLayeredPane1.add(jpnMaster);
         jpnMaster.setBounds(10, 0, 250, 160);
 
-        jpnSquare.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jpnSquare.setLayout(null);
+        jpnCube.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpnCube.setLayout(null);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel9.setText("Cuadrado");
-        jpnSquare.add(jLabel9);
+        jLabel9.setText("Cube");
+        jpnCube.add(jLabel9);
         jLabel9.setBounds(30, 20, 80, 15);
 
-        btnCalculateSquare.setText("Calcular");
-        btnCalculateSquare.addActionListener(new java.awt.event.ActionListener() {
+        btnCalculateCube.setText("Calcular");
+        btnCalculateCube.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalculateSquareActionPerformed(evt);
+                btnCalculateCubeActionPerformed(evt);
             }
         });
-        jpnSquare.add(btnCalculateSquare);
-        btnCalculateSquare.setBounds(141, 90, 90, 30);
+        jpnCube.add(btnCalculateCube);
+        btnCalculateCube.setBounds(141, 90, 90, 30);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel10.setText("Lado:");
-        jpnSquare.add(jLabel10);
+        jpnCube.add(jLabel10);
         jLabel10.setBounds(30, 60, 40, 15);
-        jpnSquare.add(txtSideSquare);
-        txtSideSquare.setBounds(79, 60, 70, 20);
+        jpnCube.add(txtSideCube);
+        txtSideCube.setBounds(79, 60, 70, 20);
 
-        jLayeredPane1.add(jpnSquare);
-        jpnSquare.setBounds(10, 0, 250, 140);
+        jLayeredPane1.add(jpnCube);
+        jpnCube.setBounds(10, 0, 250, 140);
 
         jpnSphere.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jpnSphere.setLayout(null);
@@ -168,39 +173,39 @@ public class FrmSolidsMenu extends javax.swing.JFrame {
         jLayeredPane1.add(jpnSphere);
         jpnSphere.setBounds(10, 0, 250, 150);
 
-        jpnRectangle.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jpnRectangle.setLayout(null);
+        jpnCylinder.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpnCylinder.setLayout(null);
 
-        btnCalculateRectangle.setText("Calcular");
-        btnCalculateRectangle.addActionListener(new java.awt.event.ActionListener() {
+        btnCalculateCylinder.setText("Calcular");
+        btnCalculateCylinder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalculateRectangleActionPerformed(evt);
+                btnCalculateCylinderActionPerformed(evt);
             }
         });
-        jpnRectangle.add(btnCalculateRectangle);
-        btnCalculateRectangle.setBounds(140, 110, 90, 30);
+        jpnCylinder.add(btnCalculateCylinder);
+        btnCalculateCylinder.setBounds(140, 110, 90, 30);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel11.setText("Rectángulo");
-        jpnRectangle.add(jLabel11);
+        jLabel11.setText("Cilindro");
+        jpnCylinder.add(jLabel11);
         jLabel11.setBounds(20, 15, 90, 20);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel12.setText("Lado 1:");
-        jpnRectangle.add(jLabel12);
+        jLabel12.setText("Altura :");
+        jpnCylinder.add(jLabel12);
         jLabel12.setBounds(20, 50, 50, 15);
-        jpnRectangle.add(txtSideRectangle1);
-        txtSideRectangle1.setBounds(80, 50, 70, 20);
+        jpnCylinder.add(txtHeighCylinder);
+        txtHeighCylinder.setBounds(80, 50, 70, 20);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel13.setText("Lado 2:");
-        jpnRectangle.add(jLabel13);
+        jLabel13.setText("Radio :");
+        jpnCylinder.add(jLabel13);
         jLabel13.setBounds(20, 80, 50, 15);
-        jpnRectangle.add(txtSideRectangle2);
-        txtSideRectangle2.setBounds(80, 80, 70, 20);
+        jpnCylinder.add(txtRadiusCylinder);
+        txtRadiusCylinder.setBounds(80, 80, 70, 20);
 
-        jLayeredPane1.add(jpnRectangle);
-        jpnRectangle.setBounds(10, 0, 250, 150);
+        jLayeredPane1.add(jpnCylinder);
+        jpnCylinder.setBounds(10, 0, 250, 150);
 
         jpnCone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jpnCone.setLayout(null);
@@ -243,39 +248,46 @@ public class FrmSolidsMenu extends javax.swing.JFrame {
         jLayeredPane1.add(jpnCone);
         jpnCone.setBounds(10, 0, 250, 150);
 
-        jpnRhombus.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jpnRhombus.setLayout(null);
+        jpnFrustum.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpnFrustum.setLayout(null);
 
-        btnCalculateRhombus.setText("Calcular");
-        btnCalculateRhombus.addActionListener(new java.awt.event.ActionListener() {
+        btnCalculateFrustum.setText("Calcular");
+        btnCalculateFrustum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalculateRhombusActionPerformed(evt);
+                btnCalculateFrustumActionPerformed(evt);
             }
         });
-        jpnRhombus.add(btnCalculateRhombus);
-        btnCalculateRhombus.setBounds(140, 110, 90, 30);
+        jpnFrustum.add(btnCalculateFrustum);
+        btnCalculateFrustum.setBounds(150, 120, 90, 30);
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel18.setText("Rombo");
-        jpnRhombus.add(jLabel18);
-        jLabel18.setBounds(20, 20, 50, 15);
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel20.setText("Frustum");
+        jpnFrustum.add(jLabel20);
+        jLabel20.setBounds(20, 10, 100, 20);
 
-        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel19.setText("Diagonal menor:");
-        jpnRhombus.add(jLabel19);
-        jLabel19.setBounds(20, 80, 90, 15);
-        jpnRhombus.add(txtSideRhombus1);
-        txtSideRhombus1.setBounds(120, 50, 70, 20);
-        jpnRhombus.add(txtSideRhombus2);
-        txtSideRhombus2.setBounds(120, 80, 70, 20);
+        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel22.setText("Radio 1:");
+        jpnFrustum.add(jLabel22);
+        jLabel22.setBounds(20, 40, 50, 15);
+        jpnFrustum.add(txtRadius1Frustum);
+        txtRadius1Frustum.setBounds(80, 40, 70, 20);
 
-        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel21.setText("Diagonal mayor:");
-        jpnRhombus.add(jLabel21);
-        jLabel21.setBounds(20, 50, 90, 15);
+        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel23.setText("Altura:");
+        jpnFrustum.add(jLabel23);
+        jLabel23.setBounds(20, 100, 50, 15);
+        jpnFrustum.add(txtHeighFrustum);
+        txtHeighFrustum.setBounds(80, 100, 70, 20);
 
-        jLayeredPane1.add(jpnRhombus);
-        jpnRhombus.setBounds(10, 0, 250, 150);
+        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel24.setText("Radio 2:");
+        jpnFrustum.add(jLabel24);
+        jLabel24.setBounds(20, 70, 50, 15);
+        jpnFrustum.add(txtRadius2Frustum);
+        txtRadius2Frustum.setBounds(80, 70, 70, 20);
+
+        jLayeredPane1.add(jpnFrustum);
+        jpnFrustum.setBounds(10, 0, 250, 150);
 
         getContentPane().add(jLayeredPane1);
         jLayeredPane1.setBounds(310, 90, 260, 160);
@@ -289,32 +301,32 @@ public class FrmSolidsMenu extends javax.swing.JFrame {
         getContentPane().add(btnSphere);
         btnSphere.setBounds(50, 80, 80, 90);
 
-        btnParallelogram.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/math/graphic/pictures/paralelogramo.png"))); // NOI18N
-        btnParallelogram.addActionListener(new java.awt.event.ActionListener() {
+        btnCylinder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/math/graphic/pictures/cilindro.png"))); // NOI18N
+        btnCylinder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnParallelogramActionPerformed(evt);
+                btnCylinderActionPerformed(evt);
             }
         });
-        getContentPane().add(btnParallelogram);
-        btnParallelogram.setBounds(180, 190, 80, 90);
+        getContentPane().add(btnCylinder);
+        btnCylinder.setBounds(180, 190, 80, 90);
 
-        btnSquare.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/math/graphic/pictures/cuadrado.png"))); // NOI18N
-        btnSquare.addActionListener(new java.awt.event.ActionListener() {
+        btnCube.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/math/graphic/pictures/cubo.png"))); // NOI18N
+        btnCube.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSquareActionPerformed(evt);
+                btnCubeActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSquare);
-        btnSquare.setBounds(50, 190, 80, 90);
+        getContentPane().add(btnCube);
+        btnCube.setBounds(50, 190, 80, 90);
 
-        btnRhombus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/math/graphic/pictures/rombo.png"))); // NOI18N
-        btnRhombus.addActionListener(new java.awt.event.ActionListener() {
+        btnFrustum.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/math/graphic/pictures/frustum.png"))); // NOI18N
+        btnFrustum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRhombusActionPerformed(evt);
+                btnFrustumActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRhombus);
-        btnRhombus.setBounds(50, 300, 80, 90);
+        getContentPane().add(btnFrustum);
+        btnFrustum.setBounds(50, 300, 80, 90);
         getContentPane().add(txtAreaSolids);
         txtAreaSolids.setBounds(390, 260, 70, 20);
 
@@ -337,8 +349,8 @@ public class FrmSolidsMenu extends javax.swing.JFrame {
         this.jpnSphere.setVisible(false);
         this.jpnSphere.setVisible(false);
         this.jpnCone.setVisible(false);
-        this.jpnRectangle.setVisible(false);
-        this.jpnRhombus.setVisible(false);
+        this.jpnCylinder.setVisible(false);
+        this.jpnFrustum.setVisible(false);
 
     }
     
@@ -361,29 +373,29 @@ public class FrmSolidsMenu extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnSphereActionPerformed
 
-    private void btnParallelogramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnParallelogramActionPerformed
+    private void btnCylinderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCylinderActionPerformed
         initializePanelsSolids();
         jpnMaster.setVisible(false);
-        jpnCone.setVisible(true);
-        txtRadiusCone.setText("");
-        txtHeighCone.setText("");
-        txtSideCone.setText("");
-    }//GEN-LAST:event_btnParallelogramActionPerformed
+        jpnCylinder.setVisible(true);
+        txtHeighCylinder.setText("");
+        txtRadiusCylinder.setText("");
+    }//GEN-LAST:event_btnCylinderActionPerformed
 
-    private void btnSquareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSquareActionPerformed
+    private void btnCubeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCubeActionPerformed
         initializePanelsSolids();
         jpnMaster.setVisible(false);
-        jpnSquare.setVisible(true);
-        txtSideSquare.setText("");
-    }//GEN-LAST:event_btnSquareActionPerformed
+        jpnCube.setVisible(true);
+        txtSideCube.setText("");
+    }//GEN-LAST:event_btnCubeActionPerformed
 
-    private void btnRhombusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRhombusActionPerformed
+    private void btnFrustumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFrustumActionPerformed
         initializePanelsSolids();
         jpnMaster.setVisible(false);
-        jpnRhombus.setVisible(true);
-        txtSideRhombus1.setText("");
-        txtSideRhombus2.setText("");
-    }//GEN-LAST:event_btnRhombusActionPerformed
+        jpnFrustum.setVisible(true);
+        txtRadius1Frustum.setText("");
+        txtRadius2Frustum.setText("");
+        txtHeighFrustum.setText("");
+    }//GEN-LAST:event_btnFrustumActionPerformed
 
     private void btnCalculateSphereActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateSphereActionPerformed
         txtAreaSolids.setText("");
@@ -409,51 +421,51 @@ public class FrmSolidsMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnCalculateSphereActionPerformed
 
-    private void btnCalculateSquareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateSquareActionPerformed
+    private void btnCalculateCubeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateCubeActionPerformed
         txtAreaSolids.setText("");
         txtVolumenSolids.setText("");
-        if(!this.txtSideSquare.getText().equals("")){
+        if(!this.txtSideCube.getText().equals("")){
             try{
-                float side= Float.parseFloat(txtSideSquare.getText());
-                Square sq = new Square (side);
-                txtAreaSolids.setText(sq.CalculateArea().toString());
-                txtVolumenSolids.setText(sq.CalculatePerimeter().toString());
+                float side= Float.parseFloat(txtSideCube.getText());
+                Cube cu = new Cube(side);
+                txtAreaSolids.setText(cu.CalculateArea().toString());
+                txtVolumenSolids.setText(cu.CalculateVolume().toString());
             }
             catch(NumberFormatException e){
                 JOptionPane.showMessageDialog(rootPane, "No es un número");
-                txtSideSquare.setText("");
+                txtSideCube.setText("");
             }
             
         }
         else{
             JOptionPane.showMessageDialog(rootPane, "Campos incompletos");
-            txtSideSquare.setText("");
+            txtSideCube.setText("");
         }
-    }//GEN-LAST:event_btnCalculateSquareActionPerformed
+    }//GEN-LAST:event_btnCalculateCubeActionPerformed
 
-    private void btnCalculateRectangleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateRectangleActionPerformed
+    private void btnCalculateCylinderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateCylinderActionPerformed
         txtAreaSolids.setText("");
         txtVolumenSolids.setText("");
-        if(!((this.txtSideRectangle1.getText().equals(""))||(this.txtSideRectangle2.getText().equals("")))){
+        if(!((this.txtHeighCylinder.getText().equals(""))||(this.txtRadiusCylinder.getText().equals("")))){
             try{
-                float side1= Float.parseFloat(this.txtSideRectangle1.getText());
-                float side2= Float.parseFloat(this.txtSideRectangle2.getText());
-                Rectangle r = new Rectangle (side1, side2);
-                txtAreaSolids.setText(r.CalculateArea().toString());
-                txtVolumenSolids.setText(r.CalculatePerimeter().toString());
+                float heigh= Float.parseFloat(this.txtHeighCylinder.getText());
+                float radius= Float.parseFloat(this.txtRadiusCylinder.getText());
+                Cylinder cy = new Cylinder (heigh, radius);
+                txtAreaSolids.setText(cy.CalculateArea().toString());
+                txtVolumenSolids.setText(cy.CalculateVolume().toString());
             }
             catch(NumberFormatException e){
                 JOptionPane.showMessageDialog(rootPane, "No es un número");
-                txtSideRectangle1.setText("");
-                txtSideRectangle2.setText("");
+                txtHeighCylinder.setText("");
+                txtRadiusCylinder.setText("");
             }
         }
         else{
             JOptionPane.showMessageDialog(rootPane, "Campos incompletos");
-            txtSideRectangle1.setText("");
-            txtSideRectangle2.setText("");
+            txtHeighCylinder.setText("");
+            txtRadiusCylinder.setText("");
         }
-    }//GEN-LAST:event_btnCalculateRectangleActionPerformed
+    }//GEN-LAST:event_btnCalculateCylinderActionPerformed
 
     private void btnCalculateConeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateConeActionPerformed
         txtAreaSolids.setText("");
@@ -482,29 +494,32 @@ public class FrmSolidsMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnCalculateConeActionPerformed
 
-    private void btnCalculateRhombusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateRhombusActionPerformed
+    private void btnCalculateFrustumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateFrustumActionPerformed
         txtAreaSolids.setText("");
         txtVolumenSolids.setText("");
-        if(!((this.txtSideRectangle1.getText().equals(""))||(this.txtSideRectangle2.getText().equals("")))){
+        if(!((this.txtRadius1Frustum.getText().equals(""))||(this.txtRadius2Frustum.getText().equals(""))||(this.txtHeighFrustum.getText().equals("")))){
             try{
-                float side1= Float.parseFloat(this.txtSideRectangle1.getText());
-                float side2= Float.parseFloat(this.txtSideRectangle2.getText());
-                Rectangle r = new Rectangle (side1, side2);
-                txtAreaSolids.setText(r.CalculateArea().toString());
-                txtVolumenSolids.setText(r.CalculatePerimeter().toString());
+                float radius1= Float.parseFloat(this.txtRadius1Frustum.getText());
+                float heigh= Float.parseFloat(this.txtHeighFrustum.getText());
+                float radius2= Float.parseFloat(this.txtRadius2Frustum.getText());
+                Frustum f = new Frustum(heigh, radius2, radius1);
+                txtAreaSolids.setText(f.CalculateArea().toString());
+                txtVolumenSolids.setText(f.CalculateVolume().toString());
             }
             catch(NumberFormatException e){
                 JOptionPane.showMessageDialog(rootPane, "No es un número");
-                txtSideRhombus1.setText("");
-                txtSideRhombus2.setText("");
+                txtRadius1Frustum.setText("");
+                txtRadius2Frustum.setText("");
+                txtHeighFrustum.setText("");
             }
         }
         else{
             JOptionPane.showMessageDialog(rootPane, "Campos incompletos");
-            txtSideRhombus1.setText("");
-            txtSideRhombus2.setText("");
+            txtRadius1Frustum.setText("");
+            txtRadius2Frustum.setText("");
+            txtHeighFrustum.setText("");
         }
-    }//GEN-LAST:event_btnCalculateRhombusActionPerformed
+    }//GEN-LAST:event_btnCalculateFrustumActionPerformed
 
     /**
      * @param args the command line arguments
@@ -545,15 +560,15 @@ public class FrmSolidsMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalculateCone;
-    private javax.swing.JButton btnCalculateRectangle;
-    private javax.swing.JButton btnCalculateRhombus;
+    private javax.swing.JButton btnCalculateCube;
+    private javax.swing.JButton btnCalculateCylinder;
+    private javax.swing.JButton btnCalculateFrustum;
     private javax.swing.JButton btnCalculateSphere;
-    private javax.swing.JButton btnCalculateSquare;
     private javax.swing.JButton btnCone;
-    private javax.swing.JButton btnParallelogram;
-    private javax.swing.JButton btnRhombus;
+    private javax.swing.JButton btnCube;
+    private javax.swing.JButton btnCylinder;
+    private javax.swing.JButton btnFrustum;
     private javax.swing.JButton btnSphere;
-    private javax.swing.JButton btnSquare;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -562,10 +577,11 @@ public class FrmSolidsMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -574,22 +590,23 @@ public class FrmSolidsMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jpnCone;
+    private javax.swing.JPanel jpnCube;
+    private javax.swing.JPanel jpnCylinder;
+    private javax.swing.JPanel jpnFrustum;
     private javax.swing.JPanel jpnMaster;
-    private javax.swing.JPanel jpnRectangle;
-    private javax.swing.JPanel jpnRhombus;
     private javax.swing.JPanel jpnSphere;
-    private javax.swing.JPanel jpnSquare;
     private javax.swing.JTextField txtAreaSolids;
     private javax.swing.JTextField txtHeighCone;
+    private javax.swing.JTextField txtHeighCylinder;
+    private javax.swing.JTextField txtHeighFrustum;
     private javax.swing.JTextField txtHeighSphere;
+    private javax.swing.JTextField txtRadius1Frustum;
+    private javax.swing.JTextField txtRadius2Frustum;
     private javax.swing.JTextField txtRadiusCone;
+    private javax.swing.JTextField txtRadiusCylinder;
     private javax.swing.JTextField txtRadiusSphere;
     private javax.swing.JTextField txtSideCone;
-    private javax.swing.JTextField txtSideRectangle1;
-    private javax.swing.JTextField txtSideRectangle2;
-    private javax.swing.JTextField txtSideRhombus1;
-    private javax.swing.JTextField txtSideRhombus2;
-    private javax.swing.JTextField txtSideSquare;
+    private javax.swing.JTextField txtSideCube;
     private javax.swing.JTextField txtVolumenSolids;
     // End of variables declaration//GEN-END:variables
 }
