@@ -5,6 +5,7 @@
  */
 package ec.edu.espe.math.graphic.main;
 
+import ec.edu.espe.math.graphic.menus.FrmMainMenu;
 import ec.edu.espe.math.graphic.util.GeneralException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -77,7 +78,7 @@ public class FrmLogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnLogin);
-        btnLogin.setBounds(150, 240, 100, 40);
+        btnLogin.setBounds(150, 230, 100, 40);
 
         txtPassword.setMinimumSize(new java.awt.Dimension(16, 20));
         getContentPane().add(txtPassword);
@@ -92,7 +93,8 @@ public class FrmLogin extends javax.swing.JFrame {
             try{
                 checkUser(txtUser.getText());
                 checkPassword(password);
-                
+                FrmMainMenu mainMenu = new FrmMainMenu();
+                mainMenu.setVisible(true);
             }
             catch(GeneralException e){
                 JOptionPane.showMessageDialog(rootPane, e.getMessage());
@@ -117,7 +119,7 @@ public class FrmLogin extends javax.swing.JFrame {
     
     private static void checkPassword(String password)throws GeneralException{
         boolean val;
-        val=password.equals("12345");
+        val=password.equals("1234");
         if(!val){
             throw new GeneralException("Contraseña incorrecta ...");
         }
