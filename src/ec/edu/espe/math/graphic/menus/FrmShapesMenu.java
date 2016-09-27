@@ -5,6 +5,7 @@
  */
 package ec.edu.espe.math.graphic.menus;
 
+import ec.edu.espe.conversions.Transformaciones;
 import ec.edu.espe.math.geometry.shapes.circumference.*;
 import ec.edu.espe.math.geometry.shapes.quadrilaterals.*;
 import ec.edu.espe.math.geometry.shapes.triangles.*;
@@ -16,6 +17,8 @@ import javax.swing.JOptionPane;
  */
 public class FrmShapesMenu extends javax.swing.JFrame {
 
+    private int optionOrigin;
+    private int optionDestiny;
     /**
      * Creates new form FrmShapesMenu
      */
@@ -23,6 +26,7 @@ public class FrmShapesMenu extends javax.swing.JFrame {
         initComponents();
         this.jpnMaster.setVisible(true);
         initializePanels();
+        initializeSelectionComboBoxes();
     }
 
     /**
@@ -43,6 +47,7 @@ public class FrmShapesMenu extends javax.swing.JFrame {
         btnCalculateCircle = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         txtRadiusCircle = new javax.swing.JTextField();
+        jcbOriginCircle = new javax.swing.JComboBox<>();
         jpnSquare = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         btnCalculateSquare = new javax.swing.JButton();
@@ -113,6 +118,7 @@ public class FrmShapesMenu extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtPerimeterShapes = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        jcbDestiny = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(645, 440));
@@ -160,6 +166,15 @@ public class FrmShapesMenu extends javax.swing.JFrame {
         jLabel6.setBounds(30, 60, 40, 15);
         jpnCircle.add(txtRadiusCircle);
         txtRadiusCircle.setBounds(79, 60, 70, 20);
+
+        jcbOriginCircle.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "    ", "KM", "HM", "DAM", "M", "dm", "cm", "mm" }));
+        jcbOriginCircle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbOriginCircleActionPerformed(evt);
+            }
+        });
+        jpnCircle.add(jcbOriginCircle);
+        jcbOriginCircle.setBounds(170, 50, 50, 20);
 
         jLayeredPane1.add(jpnCircle);
         jpnCircle.setBounds(10, 0, 250, 140);
@@ -532,6 +547,15 @@ public class FrmShapesMenu extends javax.swing.JFrame {
         getContentPane().add(jLabel5);
         jLabel5.setBounds(370, 260, 50, 21);
 
+        jcbDestiny.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "    ", "KM", "HM", "DAM", "M", "dm", "cm", "mm" }));
+        jcbDestiny.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbDestinyActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jcbDestiny);
+        jcbDestiny.setBounds(540, 270, 50, 20);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
@@ -543,10 +567,23 @@ public class FrmShapesMenu extends javax.swing.JFrame {
         this.jpnRhombus.setVisible(false);
         this.jpnSquare.setVisible(false);
         this.jpnTrapezoid.setVisible(false);
+        this.jpnTriangleRectangle.setVisible(false);
+        this.jpnTriangle.setVisible(false);
+    }
+    
+    private void initializeSelectionComboBoxes(){
+        this.optionOrigin = 0;
+        this.optionDestiny = 0;
+    }
+    
+    private Float conversion(float number){
+	Transformaciones t = new Transformaciones(optionOrigin, optionDestiny);
+        return number*t.calcularTransformacion();        
     }
     
     private void btnEllipseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEllipseActionPerformed
         initializePanels();
+        initializeSelectionComboBoxes();
         jpnMaster.setVisible(false);
         jpnEllipse.setVisible(true);
         txtRadiusEllipse1.setText("");
@@ -555,6 +592,7 @@ public class FrmShapesMenu extends javax.swing.JFrame {
 
     private void btnCircleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCircleActionPerformed
         initializePanels();
+        initializeSelectionComboBoxes();
         jpnMaster.setVisible(false);
         jpnCircle.setVisible(true);
         txtRadiusCircle.setText("");
@@ -562,6 +600,7 @@ public class FrmShapesMenu extends javax.swing.JFrame {
 
     private void btnParallelogramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnParallelogramActionPerformed
         initializePanels();
+        initializeSelectionComboBoxes();
         jpnMaster.setVisible(false);
         jpnParallelogram.setVisible(true);
         txtBaseParallelogram.setText("");
@@ -571,6 +610,7 @@ public class FrmShapesMenu extends javax.swing.JFrame {
 
     private void btnSquareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSquareActionPerformed
         initializePanels();
+        initializeSelectionComboBoxes();
         jpnMaster.setVisible(false);
         jpnSquare.setVisible(true);
         txtSideSquare.setText("");
@@ -578,6 +618,7 @@ public class FrmShapesMenu extends javax.swing.JFrame {
 
     private void btnRectangleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRectangleActionPerformed
         initializePanels();
+        initializeSelectionComboBoxes();
         jpnMaster.setVisible(false);
         jpnRectangle.setVisible(true);
         txtSideRectangle1.setText("");
@@ -586,6 +627,7 @@ public class FrmShapesMenu extends javax.swing.JFrame {
 
     private void btnTrapezoidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrapezoidActionPerformed
         initializePanels();
+        initializeSelectionComboBoxes();
         jpnMaster.setVisible(false);
         jpnTrapezoid.setVisible(true);
         txtBaseTrapezoid.setText("");
@@ -595,6 +637,7 @@ public class FrmShapesMenu extends javax.swing.JFrame {
 
     private void btnRhombusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRhombusActionPerformed
         initializePanels();
+        initializeSelectionComboBoxes();
         jpnMaster.setVisible(false);
         jpnRhombus.setVisible(true);
         txtSideRhombus1.setText("");
@@ -603,6 +646,7 @@ public class FrmShapesMenu extends javax.swing.JFrame {
 
     private void btnTriangleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTriangleActionPerformed
         initializePanels();
+        initializeSelectionComboBoxes();
         jpnMaster.setVisible(false);
         jpnTriangle.setVisible(true);
         txtBaseTriangle.setText("");
@@ -612,10 +656,12 @@ public class FrmShapesMenu extends javax.swing.JFrame {
 
     private void btnTriangleRectangleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTriangleRectangleActionPerformed
         initializePanels();
+        initializeSelectionComboBoxes();
         jpnMaster.setVisible(false);
         jpnTriangleRectangle.setVisible(true);
         txtBaseTriangleRectangle.setText("");
         txtHeighTriangleRectangle.setText("");
+        
     }//GEN-LAST:event_btnTriangleRectangleActionPerformed
 
     private void btnCalculateCircleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateCircleActionPerformed
@@ -625,8 +671,8 @@ public class FrmShapesMenu extends javax.swing.JFrame {
             try{
                 float radius= Float.parseFloat(txtRadiusCircle.getText());
                 Circle c = new Circle(radius);
-                txtAreaShapes.setText(c.CalculateArea().toString());
-                txtPerimeterShapes.setText(c.CalculatePerimeter().toString());
+                txtAreaShapes.setText(conversion(c.CalculateArea()).toString());
+                txtPerimeterShapes.setText(conversion(c.CalculatePerimeter()).toString()); 
             }
             catch(NumberFormatException e){
                 JOptionPane.showMessageDialog(rootPane, "No es un número");
@@ -836,6 +882,14 @@ public class FrmShapesMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnCalculateTriangleRectangleActionPerformed
 
+    private void jcbDestinyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbDestinyActionPerformed
+        this.optionDestiny=this.jcbDestiny.getSelectedIndex();
+    }//GEN-LAST:event_jcbDestinyActionPerformed
+
+    private void jcbOriginCircleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbOriginCircleActionPerformed
+        this.optionOrigin= this.jcbOriginCircle.getSelectedIndex();
+    }//GEN-LAST:event_jcbOriginCircleActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -922,6 +976,8 @@ public class FrmShapesMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JComboBox<String> jcbDestiny;
+    private javax.swing.JComboBox<String> jcbOriginCircle;
     private javax.swing.JPanel jpnCircle;
     private javax.swing.JPanel jpnEllipse;
     private javax.swing.JPanel jpnMaster;
